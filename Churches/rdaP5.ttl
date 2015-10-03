@@ -1,3 +1,4 @@
+@prefix : <http://purl.org/RDA-Provenance/demo/P5/> .
 @prefix ad: <http://schemas.talis.com/2005/address/schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -20,7 +21,7 @@
 
 # ---------------------------- The Challenge --------------------------------
 
-_:ChurchChallenge a bibo:DocumentPart, sro:Evaluation ;
+:ChurchChallenge a bibo:DocumentPart, sro:Evaluation ;
   sro:containsRhetoricalElement [ a sro:Claim ;
                                   sro:represents [ a sro:Disagreement ; ] ;
                                   sro:represents [ a sro:Challenge ; ] ;
@@ -69,7 +70,7 @@ _:ChurchChallenge a bibo:DocumentPart, sro:Evaluation ;
             bibo:pages "50-55" .
 
 
-_:Table2 a dctype:Dataset ;
+:Table2 a dctype:Dataset ;
      rdf:type bibo:DocumentPart ;
      rdfs:label "Table 2: Cases of head and arm injuries for hospitalised cycling-related injuries by age group" ;
      sam:primaryExpressionFor [ a sam:Assertion ;
@@ -81,7 +82,7 @@ _:Table2 a dctype:Dataset ;
      ] ;
      dcterms:isPartOf _:Preprint, <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
 
-_:Table3 a dctype:Dataset, bibo:DocumentPart ;
+:Table3 a dctype:Dataset, bibo:DocumentPart ;
      rdfs:label "Table 3: Ratio of head to arm injuries for hospitalised cycling-related injuries by age group" ;
      sam:primaryExpressionFor [ a sam:Assertion ;
           event:agent _:AlexanderVoukelatos, _:ChrisRissel ;
@@ -93,7 +94,7 @@ _:Table3 a dctype:Dataset, bibo:DocumentPart ;
      dcterms:isPartOf _:Preprint, <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
 
 
-_:Preprint a bibo:Manuscript ;
+:Preprint a bibo:Manuscript ;
             dcterms:creator _:AlexanderVoukelatos,
                 _:ChrisRissel ;
             dcterms:date "2010" ;
@@ -108,38 +109,38 @@ _:Preprint a bibo:Manuscript ;
 
 # -----------------------------The Actors------------------------------------
 
-_:TimChurches a foaf:Person ;
+:TimChurches a foaf:Person ;
     foaf:page <http://scholar.google.com/citations?user=THsfmA8AAAAJ&hl=en> ;
     madsrdf:isIdentifiedByAuthority <http://nla.gov.au/nla.party-580833> ;
     madsrdf:isIdentifiedByAuthority <http://nla.gov.au/anbd.aut-an35896419> ;
     foaf:givenname "Tim" ;
     foaf:surname "Churches" .
 
-_:AlexanderVoukelatos a foaf:Person ;
+:AlexanderVoukelatos a foaf:Person ;
     madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2008183531> ;
     foaf:givenname "Alexander" ;
     foaf:surname "Voukelatos" .
 
-_:ChrisRissel a foaf:Person ;
+:ChrisRissel a foaf:Person ;
     madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2005074035> ;
     foaf:givenname "Chris" ;
     foaf:surname "Rissel" .
 
-_:MichaelWalker a foaf:Person ;
+:MichaelWalker a foaf:Person ;
     foaf:givenname "Michael B" ;
     foaf:surname "Walker" .
 
-_:FrankMilthorpe a foaf:Person ;
+:FrankMilthorpe a foaf:Person ;
     madsrdf:isIdentifiedByAuthority <http://nla.gov.au/anbd.aut-an35110697> ;
     madsrdf:isIdentifiedByAuthority <http://nla.gov.au/nla.party-473715> ;
     foaf:givenname "Frank W." ;
     foaf:surname "Milthorpe" .
 
-_:NariidaSmith a foaf:Person ;
+:NariidaSmith a foaf:Person ;
     foaf:givenname "Nariida C." ;
     foaf:surname "Smith" .
 
-_:RTA a foaf:Organization ;
+:RTA a foaf:Organization ;
       ad:localityName "Surry Hills, NSW 2010 Australia" ;
       foaf:name "Roads and Traffic Authority, New South Wales" .
 
@@ -151,7 +152,7 @@ _:RTA a foaf:Organization ;
       dcterms:title "Journal of the Australasian College of Road Safety" ;
       bibo:issn "1832-9497" .
 
-_:CRseries a bibo:Series ;
+:CRseries a bibo:Series ;
            dcterms:title "Consultant Report" .
 
 <urn:isbn:0730536521> a bibo:Book ;
