@@ -1,0 +1,220 @@
+@prefix ad: <http://schemas.talis.com/2005/address/schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix resource: <http://purl.org/vocab/resourcelist/schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xref: <http://id.crossref.org/contributor/>.
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix z: <http://www.zotero.org/namespaces/export#> .
+@prefix sam: <http://cirss.lis.illinois.edu/DataCon/SAM/> .
+@prefix sro: <http://salt.semanticauthoring.org/ontologies/sro#> .
+
+# ---------------------------- The Challenge --------------------------------
+
+_:ChurchChallenge a bibo:DocumentPart, sro:Evaluation ;
+  sro:containsRhetoricalElement [ a sro:Claim ;
+                                  sro:represents [ a sro:Disagreement ; ] ;
+                                  sro:represents [ a sro:Challenge ; ] ;
+                                  dcterms:references _:Table2, _:Table3 ; 
+                                  sam:primaryExpressionFor [ a sam:Assertion ;
+                                                             event:agent _:TimChurches ;
+                                                             event:time [ a tl:Interval ;
+                                                                          tl:at "2010"^^xsd:gYear; ] ;
+                                                           ] ;
+                                ] ;
+  dcterms:isPartOf <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
+
+# --------------------- The Challenge was published here --------------------
+
+<URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> a bibo:AcademicArticle ;
+            dcterms:creator _:TimChurches ;
+            dcterms:isPartOf [ a bibo:Issue ;
+                    dcterms:date "2010" ;
+                    dcterms:isPartOf <urn:ISSN:1832-9497> ;
+                    bibo:issue "4" ;
+                    bibo:volume "21" ] ;
+            dcterms:title "Data and graphing errors in the Voukelatos and Rissel paper" ;
+            bibo:authorList [ a rdf:Seq ;
+                    rdf:_1 _:TimChurches ] ;
+            dcterms:references <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> ;
+            dcterms:references _:Preprint ;
+            bibo:cites <urn:isbn:0730591107> ;
+            bibo:cites <urn:isbn:0730536521>, <urn:isbn:0730536688>, <urn:isbn:073059100X> ;
+            bibo:pages "62-64" .
+
+# ----------------- The Challenge targeted this article and data --------------
+
+<URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> a bibo:AcademicArticle ;
+            dcterms:creator _:AlexanderVoukelatos,
+                _:ChrisRissel ;
+            dcterms:isPartOf [ a bibo:Issue ;
+                    dcterms:date "2010" ;
+                    dcterms:isPartOf <urn:ISSN:1832-9497> ;
+                    bibo:issue "3" ;
+                    bibo:volume "21" ] ;
+            dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
+            bibo:authorList [ a rdf:Seq ;
+                    rdf:_1 _:AlexanderVoukelatos ;
+                    rdf:_2 _:ChrisRissel ] ;
+            bibo:cites <urn:isbn:0730591107> ;
+            bibo:pages "50-55" .
+
+
+_:Table2 a dctype:Dataset ;
+     rdf:type bibo:DocumentPart ;
+     rdfs:label "Table 2: Cases of head and arm injuries for hospitalised cycling-related injuries by age group" ;
+     sam:primaryExpressionFor [ a sam:Assertion ;
+          event:agent _:AlexanderVoukelatos, _:ChrisRissel ;
+          event:time [ a tl:Interval ;
+                       tl:at "2010"^^xsd:gYear; ] ;
+          sam:warrantedBy [ a sam:Computation ;] ;
+          sam:hasSubstance [ a sam:Conjunction ;];
+     ] ;
+     dcterms:isPartOf _:Preprint, <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
+
+_:Table3 a dctype:Dataset, bibo:DocumentPart ;
+     rdfs:label "Table 3: Ratio of head to arm injuries for hospitalised cycling-related injuries by age group" ;
+     sam:primaryExpressionFor [ a sam:Assertion ;
+          event:agent _:AlexanderVoukelatos, _:ChrisRissel ;
+          event:time [ a tl:Interval ;
+                       tl:at "2010"^^xsd:gYear; ] ;
+          sam:warrantedBy [ a sam:Computation ;] ;
+          sam:hasSubstance [ a sam:Conjunction ;];
+     ] ;
+     dcterms:isPartOf _:Preprint, <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
+
+
+_:Preprint a bibo:Manuscript ;
+            dcterms:creator _:AlexanderVoukelatos,
+                _:ChrisRissel ;
+            dcterms:date "2010" ;
+            dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
+            bibo:authorList [ a rdf:Seq ;
+                    rdf:_1 _:AlexanderVoukelatos ;
+                    rdf:_2 _:ChrisRissel ] ;
+            bibo:cites <urn:isbn:0730591107> ;
+            dcterms:isVersionOf <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> ;
+            z:extra "Preprint available at various web addresses"  .
+
+
+# -----------------------------The Actors------------------------------------
+
+_:TimChurches a foaf:Person ;
+    foaf:page <http://scholar.google.com/citations?user=THsfmA8AAAAJ&hl=en> ;
+    madsrdf:isIdentifiedByAuthority <http://nla.gov.au/nla.party-580833> ;
+    madsrdf:isIdentifiedByAuthority <http://nla.gov.au/anbd.aut-an35896419> ;
+    foaf:givenname "Tim" ;
+    foaf:surname "Churches" .
+
+_:AlexanderVoukelatos a foaf:Person ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2008183531> ;
+    foaf:givenname "Alexander" ;
+    foaf:surname "Voukelatos" .
+
+_:ChrisRissel a foaf:Person ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2005074035> ;
+    foaf:givenname "Chris" ;
+    foaf:surname "Rissel" .
+
+_:MichaelWalker a foaf:Person ;
+    foaf:givenname "Michael B" ;
+    foaf:surname "Walker" .
+
+_:FrankMilthorpe a foaf:Person ;
+    madsrdf:isIdentifiedByAuthority <http://nla.gov.au/anbd.aut-an35110697> ;
+    madsrdf:isIdentifiedByAuthority <http://nla.gov.au/nla.party-473715> ;
+    foaf:givenname "Frank W." ;
+    foaf:surname "Milthorpe" .
+
+_:NariidaSmith a foaf:Person ;
+    foaf:givenname "Nariida C." ;
+    foaf:surname "Smith" .
+
+_:RTA a foaf:Organization ;
+      ad:localityName "Surry Hills, NSW 2010 Australia" ;
+      foaf:name "Roads and Traffic Authority, New South Wales" .
+
+
+# --------------------------- Background publications -----------------------------
+
+
+<urn:ISSN:1832-9497> a bibo:Journal ;
+      dcterms:title "Journal of the Australasian College of Road Safety" ;
+      bibo:issn "1832-9497" .
+
+_:CRseries a bibo:Series ;
+           dcterms:title "Consultant Report" .
+
+<urn:isbn:0730536521> a bibo:Book ;
+    dcterms:creator _:MichaelWalker ;
+    dcterms:date "December 1990" ;
+    dcterms:isPartOf _:CRseries ;
+    bibo:number "CR 6/90" ;
+    dcterms:publisher _:RTA ;
+    dcterms:title "Law compliance and helmet use among cyclists in New South Wales" ;
+    bibo:authorList [ a rdf:Seq ;
+            rdf:_1 _:MichaelWalker ] ;
+    bibo:isbn10 "0730536521" .
+
+<urn:isbn:0730536688> a bibo:Book ;
+    dcterms:creator _:MichaelWalker ;
+    dcterms:date "July 1991" ;
+    dcterms:isPartOf _:CRseries ;
+    bibo:number "CR 1/91" ;
+    dcterms:publisher _:RTA ;
+    dcterms:title "Law compliance and helmet use among cyclists in New South Wales, April 1991" ;
+    bibo:authorList [ a rdf:Seq ;
+            rdf:_1 _:MichaelWalker ] ;
+    bibo:isbn10 "0730536688" .
+
+<urn:isbn:073059100X> a bibo:Book ;
+    dcterms:creator _:MichaelWalker ;
+    dcterms:date "July 1992" ;
+    dcterms:publisher _:RTA ;
+    dcterms:title "Law compliance among cyclists in New South Wales, April 1992; A third survey" ;
+    bibo:authorList [ a rdf:Seq ;
+            rdf:_1 _:MichaelWalker ] ;
+    bibo:isbn10 "073059100X" .
+
+<urn:isbn:0730591107> a bibo:Book ;
+    dcterms:creator _:FrankMilthorpe,
+        _:NariidaSmith ;
+    dcterms:date "September 1993" ;
+    dcterms:publisher _:RTA ;
+    dcterms:title "An Observational Survey of Law Compliance and Helmet Wearing by Bicyclists in New South Wales - 1993" ;
+    bibo:authorList [ a rdf:Seq ;
+            rdf:_1 _:NariidaSmith ;
+            rdf:_2 _:FrankMilthorpe ] ;
+    bibo:isbn10 "0730591107" .
+
+# ------------------ The publication resources bibliography ------------------------
+
+<http://zotero.org/groups/314777/items/E6HIWWDS> a z:UserItem ;
+    resource:resource <urn:isbn:0730536688> .
+
+<http://zotero.org/groups/314777/items/F4A97IPE> a z:UserItem ;
+    resource:resource <urn:isbn:0730591107> .
+
+<http://zotero.org/groups/314777/items/IEGERI9F> a z:UserItem ;
+    resource:resource <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
+
+<http://zotero.org/groups/314777/items/IWHV8GF4> a z:UserItem ;
+    resource:resource <urn:isbn:0730536521> .
+
+<http://zotero.org/groups/314777/items/JJ2SMJNJ> a z:UserItem ;
+    resource:resource <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
+
+<http://zotero.org/groups/314777/items/VEX2JUNZ> a z:UserItem ;
+    resource:resource _:Preprint .
+
+<http://zotero.org/groups/314777/items/VTWP6BZF> a z:UserItem ;
+    resource:resource <urn:isbn:073059100X> .
