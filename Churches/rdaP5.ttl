@@ -21,28 +21,30 @@
 
 # ---------------------------- The Challenge --------------------------------
 
-:ChurchChallenge a bibo:DocumentPart, sro:Evaluation, owl:NamedIndividual ;
-  sro:containsRhetoricalElement [ a sro:Claim ;
-                                  sro:represents [ a sro:Disagreement ; ] ;
-                                  sro:represents [ a sro:Challenge ; ] ;
-                                  dcterms:references :Table2, :Table3 ; 
-                                  sam:primaryExpressionFor [ a sam:Assertion ;
-                                                             event:agent :TimChurches ;
-                                                             event:time [ a tl:Interval ;
-                                                                          tl:at "2010"^^xsd:gYear; ] ;
-                                                           ] ;
-                                ] ;
+:ChurchesChallengeBlock a bibo:DocumentPart, sro:Evaluation, owl:NamedIndividual ;
+  sro:containsRhetoricalElement :ChurchesClaim ;
   dcterms:isPartOf <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
 
+:ChurchesClaim a sro:Claim, owl:NamedIndividual ;
+    sro:represents :ChurchesDisagreementPosition, :ChurchesChallengeArgument ;
+    dcterms:references :Table2, :Table3 ; 
+    sam:primaryExpressionFor :ChurchesAssertion .
+	
+:ChurchesAssertion a sam:Assertion, owl:NamedIndividual ;
+   event:agent :TimChurches ; 
+   event:time [ a tl:Interval ;
+                tl:at "2010"^^xsd:gYear; ] .
+  
+:ChurchesChallengeArgument a sro:Challenge, owl:NamedIndividual;  
+  sro:arguments :ChurchesDisagreementPosition .
+  
+:ChurchesDisagreementPosition a sro:Disagreement, owl:NamedIndividual .
+    
 # --------------------- The Challenge was published here --------------------
 
 <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> a bibo:AcademicArticle, owl:NamedIndividual ;
             dcterms:creator :TimChurches ;
-            dcterms:isPartOf [ a bibo:Issue ;
-                    dcterms:date "2010" ;
-                    dcterms:isPartOf <urn:ISSN:1832-9497> ;
-                    bibo:issue "4" ;
-                    bibo:volume "21" ] ;
+            dcterms:isPartOf :JACRSv21n4 ;
             dcterms:title "Data and graphing errors in the Voukelatos and Rissel paper" ;
             bibo:authorList [ a rdf:Seq ;
                     rdf:_1 :TimChurches ] ;
@@ -51,48 +53,56 @@
             bibo:cites <urn:isbn:0730591107> ;
             bibo:cites <urn:isbn:0730536521>, <urn:isbn:0730536688>, <urn:isbn:073059100X> ;
             bibo:pages "62-64" .
-
+			
+:JACRSv21n4 a bibo:Issue, owl:NamedIndividual ;
+    dcterms:date "2010" ;
+    dcterms:isPartOf <urn:ISSN:1832-9497> ;
+    bibo:issue "4" ;
+    bibo:volume "21" .
+						
 # ----------------- The Challenge targeted this article and data --------------
 
 <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> a bibo:AcademicArticle, owl:NamedIndividual ;
-            dcterms:creator :AlexanderVoukelatos,
-                :ChrisRissel ;
-            dcterms:isPartOf [ a bibo:Issue ;
-                    dcterms:date "2010" ;
-                    dcterms:isPartOf <urn:ISSN:1832-9497> ;
-                    bibo:issue "3" ;
-                    bibo:volume "21" ] ;
-            dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
-            bibo:authorList [ a rdf:Seq ;
-                    rdf:_1 :AlexanderVoukelatos ;
-                    rdf:_2 :ChrisRissel ] ;
-            bibo:cites <urn:isbn:0730591107> ;
-            bibo:pages "50-55" .
+    dcterms:creator :AlexanderVoukelatos, :ChrisRissel ;
+    dcterms:isPartOf :JACRSv21n3 ;
+    dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
+    bibo:authorList [ a rdf:Seq ;
+            rdf:_1 :AlexanderVoukelatos ;
+            rdf:_2 :ChrisRissel ] ;
+    bibo:cites <urn:isbn:0730591107> ;
+    bibo:pages "50-55" .
+			
+:JACRSv21n3  a bibo:Issue, owl:NamedIndividual ;
+    dcterms:date "2010" ;
+    dcterms:isPartOf <urn:ISSN:1832-9497> ;
+    bibo:issue "3" ;
+    bibo:volume "21" .
 
-
-:Table2 a dctype:Dataset, owl:NamedIndividual ;
-     rdf:type bibo:DocumentPart ;
+:Table2 a dctype:Dataset, bibo:DocumentPart, owl:NamedIndividual ;
      rdfs:label "Table 2: Cases of head and arm injuries for hospitalised cycling-related injuries by age group" ;
-     sam:primaryExpressionFor [ a sam:Assertion ;
-          event:agent :AlexanderVoukelatos, :ChrisRissel ;
-          event:time [ a tl:Interval ;
-                       tl:at "2010"^^xsd:gYear; ] ;
-          sam:warrantedBy [ a sam:Computation ;] ;
-          sam:hasSubstance [ a sam:Conjunction ;];
-     ] ;
+     sam:primaryExpressionFor :Table2Assertion ;
      dcterms:isPartOf :Preprint, <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
-
+:Table2Assertion a sam:Assertion ;	
+    event:agent :AlexanderVoukelatos, :ChrisRissel ;
+    event:time [ a tl:Interval ;
+                 tl:at "2010"^^xsd:gYear; ] ;
+    sam:warrantedBy :Table2Calculation ;
+    sam:hasSubstance :Table2DataContent .
+:Table2Calculation a sam:Computation .
+:Table2DataContent a sam:Conjunction .
+  	 
 :Table3 a dctype:Dataset, bibo:DocumentPart, owl:NamedIndividual ;
      rdfs:label "Table 3: Ratio of head to arm injuries for hospitalised cycling-related injuries by age group" ;
-     sam:primaryExpressionFor [ a sam:Assertion ;
-          event:agent :AlexanderVoukelatos, :ChrisRissel ;
-          event:time [ a tl:Interval ;
-                       tl:at "2010"^^xsd:gYear; ] ;
-          sam:warrantedBy [ a sam:Computation ;] ;
-          sam:hasSubstance [ a sam:Conjunction ;];
-     ] ;
+     sam:primaryExpressionFor :Table3Assertion ;
      dcterms:isPartOf :Preprint, <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
-
+:Table3Assertion a sam:Assertion ;
+    event:agent :AlexanderVoukelatos, :ChrisRissel ;
+    event:time [ a tl:Interval ;
+                 tl:at "2010"^^xsd:gYear; ] ;
+    sam:warrantedBy :Table3Calculation ;
+    sam:hasSubstance :Table3DataContent .
+:Table3Calculation a sam:Computation .
+:Table3DataContent a sam:Conjunction .
 
 :Preprint a bibo:Manuscript, owl:NamedIndividual ;
             dcterms:creator :AlexanderVoukelatos,
