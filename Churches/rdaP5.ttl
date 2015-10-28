@@ -11,6 +11,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xref: <http://id.crossref.org/contributor/>.
+@prefix npg: <http://ns.nature.com/terms/> .
 @prefix event: <http://purl.org/NET/c4dm/event.owl#> .
 @prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
 @prefix frbr: <http://purl.org/vocab/frbr/core#> .
@@ -42,7 +43,7 @@
     
 # --------------------- The Challenge was published here --------------------
 
-<URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> a bibo:AcademicArticle, owl:NamedIndividual ;
+<URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> a bibo:AcademicArticle, npg:Article, owl:NamedIndividual ;
             dcterms:creator :TimChurches ;
             dcterms:isPartOf :JACRSv21n4 ;
             dcterms:title "Data and graphing errors in the Voukelatos and Rissel paper" ;
@@ -62,7 +63,7 @@
 						
 # ----------------- The Challenge targeted this article and data --------------
 
-<URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> a bibo:AcademicArticle, owl:NamedIndividual ;
+<URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> a bibo:AcademicArticle, npg:Article, owl:NamedIndividual ;
     dcterms:creator :AlexanderVoukelatos, :ChrisRissel ;
     dcterms:isPartOf :JACRSv21n3 ;
     dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
