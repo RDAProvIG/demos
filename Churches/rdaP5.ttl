@@ -46,7 +46,7 @@
   event:agent :TimChurches ;
   event:sub_event :ChurchesAssertion ;
   event:time [ a tl:Interval ;
-                tl:at "2010"^^xsd:gYear; ]
+                tl:at "2010"^^xsd:gYear; ] ;
   npg:hasArticle <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
     
 # --------------------- The Challenge was published here --------------------
