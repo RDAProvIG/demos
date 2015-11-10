@@ -26,6 +26,7 @@
   sro:containsRhetoricalElement :ChurchesClaim ;
   dcterms:isPartOf <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
 
+# sro:Claims are rhetorical elements, and therefore text spans.
 :ChurchesClaim a sro:Claim, owl:NamedIndividual ;
     sro:represents :ChurchesDisagreementPosition, :ChurchesChallengeArgument ;
     dcterms:references :Table2, :Table3 ; 
@@ -35,11 +36,18 @@
    event:agent :TimChurches ; 
    event:time [ a tl:Interval ;
                 tl:at "2010"^^xsd:gYear; ] .
-  
+
 :ChurchesChallengeArgument a sro:Challenge, owl:NamedIndividual;  
   sro:arguments :ChurchesDisagreementPosition .
   
 :ChurchesDisagreementPosition a sro:Disagreement, owl:NamedIndividual .
+
+:ChurchesAuthorshipEvent a npg:PublicationEvent, owl:NamedIndividual ;
+  event:agent :TimChurches ;
+  event:sub_event :ChurchesAssertion ;
+  event:time [ a tl:Interval ;
+                tl:at "2010"^^xsd:gYear; ]
+  npg:hasArticle <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
     
 # --------------------- The Challenge was published here --------------------
 
@@ -60,7 +68,13 @@
     dcterms:isPartOf <urn:ISSN:1832-9497> ;
     bibo:issue "4" ;
     bibo:volume "21" .
-						
+	
+:VRAuthorshipEvent a npg:PublicationEvent, owl:NamedIndividual ;
+    event:agent :AlexanderVoukelatos, :ChrisRissel ;
+    event:time [ a tl:Interval ;
+                 tl:at "2010"^^xsd:gYear; ] ;
+	event:sub_event :Table2Assertion, :Table3Assertion .
+
 # ----------------- The Challenge targeted this article and data --------------
 
 <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> a bibo:AcademicArticle, npg:Article, owl:NamedIndividual ;
@@ -155,6 +169,9 @@
       ad:localityName "Surry Hills, NSW 2010 Australia" ;
       foaf:name "Roads and Traffic Authority, New South Wales" .
 
+:ACRS a foaf:Organization, owl:NamedIndividual ;
+    foaf:name "Australasian College of Road Safety" ;
+	ad:localityName "PEARCE A.C.T. 2607, Australia" .
 
 # --------------------------- Background publications -----------------------------
 
