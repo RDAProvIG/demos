@@ -21,9 +21,216 @@
 @base <http://www.w3.org/2002/07/owl#> .
 
 [ rdf:type owl:Ontology ;
-  owl:imports <http://purl.org/RDA-Provenance/demo/P5/> ,
+  owl:imports <http://cirssweb.lis.illinois.edu/DataCon/SAM/0.9.9> ,
               <http://www.w3.org/ns/prov-o-20130430>
 ] .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://cirss.lis.illinois.edu/DataCon/SAM/hasSubstance
+
+sam:hasSubstance rdf:type owl:AnnotationProperty .
+
+
+
+###  http://cirss.lis.illinois.edu/DataCon/SAM/primaryExpressionFor
+
+sam:primaryExpressionFor rdf:type owl:AnnotationProperty .
+
+
+
+###  http://cirss.lis.illinois.edu/DataCon/SAM/warrantedBy
+
+sam:warrantedBy rdf:type owl:AnnotationProperty .
+
+
+
+###  http://ns.nature.com/terms/hasArticle
+
+<http://ns.nature.com/terms/hasArticle> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/NET/c4dm/event.owl#agent
+
+event:agent rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/NET/c4dm/event.owl#sub_event
+
+event:sub_event rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/NET/c4dm/event.owl#time
+
+event:time rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/creator
+
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/date
+
+dcterms:date rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/isPartOf
+
+dcterms:isPartOf rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/isVersionOf
+
+dcterms:isVersionOf rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/publisher
+
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/references
+
+dcterms:references rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/title
+
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/authorList
+
+bibo:authorList rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/cites
+
+bibo:cites rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/isbn10
+
+bibo:isbn10 rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/issn
+
+bibo:issn rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/issue
+
+bibo:issue rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/number
+
+bibo:number rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/pages
+
+bibo:pages rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/ontology/bibo/volume
+
+bibo:volume rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/vocab/resourcelist/schema#resource
+
+resource:resource rdf:type owl:AnnotationProperty .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#arguments
+
+sro:arguments rdf:type owl:AnnotationProperty .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#containsRhetoricalElement
+
+sro:containsRhetoricalElement rdf:type owl:AnnotationProperty .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#represents
+
+sro:represents rdf:type owl:AnnotationProperty .
+
+
+
+###  http://schemas.talis.com/2005/address/schema#localityName
+
+ad:localityName rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority
+
+madsrdf:isIdentifiedByAuthority rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.zotero.org/namespaces/export#extra
+
+z:extra rdf:type owl:AnnotationProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/givenname
+
+foaf:givenname rdf:type owl:AnnotationProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/name
+
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/page
+
+foaf:page rdf:type owl:AnnotationProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/surname
+
+foaf:surname rdf:type owl:AnnotationProperty .
+
+
+
 
 
 #################################################################
@@ -35,7 +242,121 @@
 
 ###  http://cirss.lis.illinois.edu/DataCon/SAM/Assertion
 
-sam:Assertion rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> .
+sam:Assertion rdf:type owl:Class ;
+              
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> .
+
+
+
+###  http://cirss.lis.illinois.edu/DataCon/SAM/Computation
+
+sam:Computation rdf:type owl:Class .
+
+
+
+###  http://cirss.lis.illinois.edu/DataCon/SAM/Conjunction
+
+sam:Conjunction rdf:type owl:Class .
+
+
+
+###  http://ns.nature.com/terms/Article
+
+<http://ns.nature.com/terms/Article> rdf:type owl:Class .
+
+
+
+###  http://ns.nature.com/terms/PublicationEvent
+
+<http://ns.nature.com/terms/PublicationEvent> rdf:type owl:Class .
+
+
+
+###  http://purl.org/NET/c4dm/timeline.owl#Interval
+
+tl:Interval rdf:type owl:Class .
+
+
+
+###  http://purl.org/dc/dcmitype/Dataset
+
+dctype:Dataset rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/AcademicArticle
+
+bibo:AcademicArticle rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Book
+
+bibo:Book rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/DocumentPart
+
+bibo:DocumentPart rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Issue
+
+bibo:Issue rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Journal
+
+bibo:Journal rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Manuscript
+
+bibo:Manuscript rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Series
+
+bibo:Series rdf:type owl:Class .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#Challenge
+
+sro:Challenge rdf:type owl:Class ;
+              
+              rdfs:subClassOf <http://cirssweb.lis.illinois.edu/DataCon/SAM/Assertion> .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#Claim
+
+sro:Claim rdf:type owl:Class .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#Disagreement
+
+sro:Disagreement rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf <http://cirssweb.lis.illinois.edu/DataCon/SAM/Claim> .
+
+
+
+###  http://salt.semanticauthoring.org/ontologies/sro#Evaluation
+
+sro:Evaluation rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq
+
+rdf:Seq rdf:type owl:Class .
 
 
 
@@ -45,8 +366,583 @@ sam:Assertion rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> .
 
 
 
+###  http://www.zotero.org/namespaces/export#UserItem
+
+z:UserItem rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+
+foaf:Organization rdf:type owl:Class .
+
+
+
 ###  http://xmlns.com/foaf/0.1/Person
 
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A
+
+<URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> rdf:type <http://ns.nature.com/terms/Article> ,
+                                                                   bibo:AcademicArticle ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          bibo:pages "50-55" ;
+                                                          
+                                                          dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
+                                                          
+                                                          dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos> ,
+                                                                          <http://purl.org/RDA-Provenance/demo/P5/ChrisRissel> ;
+                                                          
+                                                          dcterms:isPartOf <http://purl.org/RDA-Provenance/demo/P5/JACRSv21n3> ;
+                                                          
+                                                          bibo:cites <urn:isbn:0730591107> ;
+                                                          
+                                                          bibo:authorList [ rdf:type rdf:Seq
+                                                                          ] .
+
+
+
+###  URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8
+
+<URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> rdf:type <http://ns.nature.com/terms/Article> ,
+                                                                   bibo:AcademicArticle ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          bibo:pages "62-64" ;
+                                                          
+                                                          dcterms:title "Data and graphing errors in the Voukelatos and Rissel paper" ;
+                                                          
+                                                          dcterms:references <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> ;
+                                                          
+                                                          dcterms:isPartOf <http://purl.org/RDA-Provenance/demo/P5/JACRSv21n4> ;
+                                                          
+                                                          dcterms:references <http://purl.org/RDA-Provenance/demo/P5/Preprint> ;
+                                                          
+                                                          dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/TimChurches> ;
+                                                          
+                                                          bibo:cites <urn:isbn:0730536521> ,
+                                                                     <urn:isbn:0730536688> ,
+                                                                     <urn:isbn:073059100X> ,
+                                                                     <urn:isbn:0730591107> ;
+                                                          
+                                                          bibo:authorList [ rdf:type rdf:Seq
+                                                                          ] .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ACRS
+
+<http://purl.org/RDA-Provenance/demo/P5/ACRS> rdf:type owl:NamedIndividual ,
+                                                       foaf:Organization ;
+                                              
+                                              ad:localityName "PEARCE A.C.T. 2607, Australia" ;
+                                              
+                                              foaf:name "Australasian College of Road Safety" .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos
+
+<http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos> rdf:type owl:NamedIndividual ,
+                                                                      foaf:Person ;
+                                                             
+                                                             foaf:givenname "Alexander" ;
+                                                             
+                                                             foaf:surname "Voukelatos" ;
+                                                             
+                                                             madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2008183531> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/CRseries
+
+<http://purl.org/RDA-Provenance/demo/P5/CRseries> rdf:type bibo:Series ,
+                                                           owl:NamedIndividual ;
+                                                  
+                                                  dcterms:title "Consultant Report" .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChrisRissel
+
+<http://purl.org/RDA-Provenance/demo/P5/ChrisRissel> rdf:type owl:NamedIndividual ,
+                                                              foaf:Person ;
+                                                     
+                                                     foaf:givenname "Chris" ;
+                                                     
+                                                     foaf:surname "Rissel" ;
+                                                     
+                                                     madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2005074035> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChurchesAssertion
+
+<http://purl.org/RDA-Provenance/demo/P5/ChurchesAssertion> rdf:type sam:Assertion ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           event:agent <http://purl.org/RDA-Provenance/demo/P5/TimChurches> ;
+                                                           
+                                                           event:time [ rdf:type tl:Interval
+                                                                      ] .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChurchesAuthorshipEvent
+
+<http://purl.org/RDA-Provenance/demo/P5/ChurchesAuthorshipEvent> rdf:type <http://ns.nature.com/terms/PublicationEvent> ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 <http://ns.nature.com/terms/hasArticle> <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> ;
+                                                                 
+                                                                 event:sub_event <http://purl.org/RDA-Provenance/demo/P5/ChurchesAssertion> ;
+                                                                 
+                                                                 event:agent <http://purl.org/RDA-Provenance/demo/P5/TimChurches> ;
+                                                                 
+                                                                 event:time [ rdf:type tl:Interval
+                                                                            ] .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChurchesChallengeArgument
+
+<http://purl.org/RDA-Provenance/demo/P5/ChurchesChallengeArgument> rdf:type sro:Challenge ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   sro:arguments <http://purl.org/RDA-Provenance/demo/P5/ChurchesDisagreementPosition> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChurchesChallengeBlock
+
+<http://purl.org/RDA-Provenance/demo/P5/ChurchesChallengeBlock> rdf:type bibo:DocumentPart ,
+                                                                         sro:Evaluation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                dcterms:isPartOf <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> ;
+                                                                
+                                                                sro:containsRhetoricalElement <http://purl.org/RDA-Provenance/demo/P5/ChurchesClaim> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChurchesClaim
+
+<http://purl.org/RDA-Provenance/demo/P5/ChurchesClaim> rdf:type sro:Claim ,
+                                                                owl:NamedIndividual ;
+                                                       
+                                                       sam:primaryExpressionFor <http://purl.org/RDA-Provenance/demo/P5/ChurchesAssertion> ;
+                                                       
+                                                       sro:represents <http://purl.org/RDA-Provenance/demo/P5/ChurchesChallengeArgument> ,
+                                                                      <http://purl.org/RDA-Provenance/demo/P5/ChurchesDisagreementPosition> ;
+                                                       
+                                                       dcterms:references <http://purl.org/RDA-Provenance/demo/P5/Table2> ,
+                                                                          <http://purl.org/RDA-Provenance/demo/P5/Table3> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/ChurchesDisagreementPosition
+
+<http://purl.org/RDA-Provenance/demo/P5/ChurchesDisagreementPosition> rdf:type sro:Disagreement ,
+                                                                               owl:NamedIndividual .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/FrankMilthorpe
+
+<http://purl.org/RDA-Provenance/demo/P5/FrankMilthorpe> rdf:type owl:NamedIndividual ,
+                                                                 foaf:Person ;
+                                                        
+                                                        foaf:surname "Milthorpe" ;
+                                                        
+                                                        foaf:givenname "Frank W." ;
+                                                        
+                                                        madsrdf:isIdentifiedByAuthority <http://nla.gov.au/anbd.aut-an35110697> ,
+                                                                                        <http://nla.gov.au/nla.party-473715> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/JACRSv21n3
+
+<http://purl.org/RDA-Provenance/demo/P5/JACRSv21n3> rdf:type bibo:Issue ,
+                                                             owl:NamedIndividual ;
+                                                    
+                                                    bibo:volume "21" ;
+                                                    
+                                                    bibo:issue "3" ;
+                                                    
+                                                    dcterms:date "2010" ;
+                                                    
+                                                    dcterms:isPartOf <urn:ISSN:1832-9497> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/JACRSv21n4
+
+<http://purl.org/RDA-Provenance/demo/P5/JACRSv21n4> rdf:type bibo:Issue ,
+                                                             owl:NamedIndividual ;
+                                                    
+                                                    bibo:volume "21" ;
+                                                    
+                                                    dcterms:date "2010" ;
+                                                    
+                                                    bibo:issue "4" ;
+                                                    
+                                                    dcterms:isPartOf <urn:ISSN:1832-9497> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/MichaelWalker
+
+<http://purl.org/RDA-Provenance/demo/P5/MichaelWalker> rdf:type owl:NamedIndividual ,
+                                                                foaf:Person ;
+                                                       
+                                                       foaf:givenname "Michael B" ;
+                                                       
+                                                       foaf:surname "Walker" .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/NariidaSmith
+
+<http://purl.org/RDA-Provenance/demo/P5/NariidaSmith> rdf:type owl:NamedIndividual ,
+                                                               foaf:Person ;
+                                                      
+                                                      foaf:surname "Smith" ;
+                                                      
+                                                      foaf:givenname "Nariida C." .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Preprint
+
+<http://purl.org/RDA-Provenance/demo/P5/Preprint> rdf:type bibo:Manuscript ,
+                                                           owl:NamedIndividual ;
+                                                  
+                                                  dcterms:title "The effects of bicycle helmet legislation on cycling-related injury: The ratio of head to arm injuries over time" ;
+                                                  
+                                                  dcterms:date "2010" ;
+                                                  
+                                                  z:extra "Preprint available at various web addresses" ;
+                                                  
+                                                  dcterms:isVersionOf <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> ;
+                                                  
+                                                  dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos> ,
+                                                                  <http://purl.org/RDA-Provenance/demo/P5/ChrisRissel> ;
+                                                  
+                                                  bibo:cites <urn:isbn:0730591107> ;
+                                                  
+                                                  bibo:authorList [ rdf:type rdf:Seq
+                                                                  ] .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/RTA
+
+<http://purl.org/RDA-Provenance/demo/P5/RTA> rdf:type owl:NamedIndividual ,
+                                                      foaf:Organization ;
+                                             
+                                             ad:localityName "Surry Hills, NSW 2010 Australia" ;
+                                             
+                                             foaf:name "Roads and Traffic Authority, New South Wales" .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table2
+
+<http://purl.org/RDA-Provenance/demo/P5/Table2> rdf:type dctype:Dataset ,
+                                                         bibo:DocumentPart ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "Table 2: Cases of head and arm injuries for hospitalised cycling-related injuries by age group" ;
+                                                
+                                                dcterms:isPartOf <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> ,
+                                                                 <http://purl.org/RDA-Provenance/demo/P5/Preprint> ;
+                                                
+                                                sam:primaryExpressionFor <http://purl.org/RDA-Provenance/demo/P5/Table2Assertion> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table2Assertion
+
+<http://purl.org/RDA-Provenance/demo/P5/Table2Assertion> rdf:type sam:Assertion ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         event:agent <http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos> ,
+                                                                     <http://purl.org/RDA-Provenance/demo/P5/ChrisRissel> ;
+                                                         
+                                                         sam:warrantedBy <http://purl.org/RDA-Provenance/demo/P5/Table2Calculation> ;
+                                                         
+                                                         sam:hasSubstance <http://purl.org/RDA-Provenance/demo/P5/Table2DataContent> ;
+                                                         
+                                                         event:time [ rdf:type tl:Interval
+                                                                    ] .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table2Calculation
+
+<http://purl.org/RDA-Provenance/demo/P5/Table2Calculation> rdf:type sam:Computation ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table2DataContent
+
+<http://purl.org/RDA-Provenance/demo/P5/Table2DataContent> rdf:type sam:Conjunction ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table3
+
+<http://purl.org/RDA-Provenance/demo/P5/Table3> rdf:type dctype:Dataset ,
+                                                         bibo:DocumentPart ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "Table 3: Ratio of head to arm injuries for hospitalised cycling-related injuries by age group" ;
+                                                
+                                                dcterms:isPartOf <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> ,
+                                                                 <http://purl.org/RDA-Provenance/demo/P5/Preprint> ;
+                                                
+                                                sam:primaryExpressionFor <http://purl.org/RDA-Provenance/demo/P5/Table3Assertion> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table3Assertion
+
+<http://purl.org/RDA-Provenance/demo/P5/Table3Assertion> rdf:type sam:Assertion ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         event:agent <http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos> ,
+                                                                     <http://purl.org/RDA-Provenance/demo/P5/ChrisRissel> ;
+                                                         
+                                                         sam:warrantedBy <http://purl.org/RDA-Provenance/demo/P5/Table3Calculation> ;
+                                                         
+                                                         sam:hasSubstance <http://purl.org/RDA-Provenance/demo/P5/Table3DataContent> ;
+                                                         
+                                                         event:time [ rdf:type tl:Interval
+                                                                    ] .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table3Calculation
+
+<http://purl.org/RDA-Provenance/demo/P5/Table3Calculation> rdf:type sam:Computation ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/Table3DataContent
+
+<http://purl.org/RDA-Provenance/demo/P5/Table3DataContent> rdf:type sam:Conjunction ,
+                                                                    owl:NamedIndividual .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/TimChurches
+
+<http://purl.org/RDA-Provenance/demo/P5/TimChurches> rdf:type owl:NamedIndividual ,
+                                                              foaf:Person ;
+                                                     
+                                                     foaf:givenname "Tim" ;
+                                                     
+                                                     foaf:surname "Churches" ;
+                                                     
+                                                     madsrdf:isIdentifiedByAuthority <http://nla.gov.au/anbd.aut-an35896419> ,
+                                                                                     <http://nla.gov.au/nla.party-580833> ;
+                                                     
+                                                     foaf:page <http://scholar.google.com/citations?user=THsfmA8AAAAJ&hl=en> .
+
+
+
+###  http://purl.org/RDA-Provenance/demo/P5/VRAuthorshipEvent
+
+<http://purl.org/RDA-Provenance/demo/P5/VRAuthorshipEvent> rdf:type <http://ns.nature.com/terms/PublicationEvent> ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           event:agent <http://purl.org/RDA-Provenance/demo/P5/AlexanderVoukelatos> ,
+                                                                       <http://purl.org/RDA-Provenance/demo/P5/ChrisRissel> ;
+                                                           
+                                                           event:sub_event <http://purl.org/RDA-Provenance/demo/P5/Table2Assertion> ,
+                                                                           <http://purl.org/RDA-Provenance/demo/P5/Table3Assertion> ;
+                                                           
+                                                           event:time [ rdf:type tl:Interval
+                                                                      ] .
+
+
+
+###  http://zotero.org/groups/314777/items/E6HIWWDS
+
+<http://zotero.org/groups/314777/items/E6HIWWDS> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <urn:isbn:0730536688> .
+
+
+
+###  http://zotero.org/groups/314777/items/F4A97IPE
+
+<http://zotero.org/groups/314777/items/F4A97IPE> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <urn:isbn:0730591107> .
+
+
+
+###  http://zotero.org/groups/314777/items/IEGERI9F
+
+<http://zotero.org/groups/314777/items/IEGERI9F> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <URN:SICI:1832-9497(201011)21:4%3C62:DAGEIT%3E2.0.TX;2-8> .
+
+
+
+###  http://zotero.org/groups/314777/items/IWHV8GF4
+
+<http://zotero.org/groups/314777/items/IWHV8GF4> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <urn:isbn:0730536521> .
+
+
+
+###  http://zotero.org/groups/314777/items/JJ2SMJNJ
+
+<http://zotero.org/groups/314777/items/JJ2SMJNJ> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <URN:SICI:1832-9497(201008)21:3%3C50:TEOBHL%3E2.0.TX;2-A> .
+
+
+
+###  http://zotero.org/groups/314777/items/VEX2JUNZ
+
+<http://zotero.org/groups/314777/items/VEX2JUNZ> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <http://purl.org/RDA-Provenance/demo/P5/Preprint> .
+
+
+
+###  http://zotero.org/groups/314777/items/VTWP6BZF
+
+<http://zotero.org/groups/314777/items/VTWP6BZF> rdf:type owl:NamedIndividual ,
+                                                          z:UserItem ;
+                                                 
+                                                 resource:resource <urn:isbn:073059100X> .
+
+
+
+###  urn:ISSN:1832-9497
+
+<urn:ISSN:1832-9497> rdf:type bibo:Journal ,
+                              owl:NamedIndividual ;
+                     
+                     dcterms:title "Journal of the Australasian College of Road Safety" ;
+                     
+                     bibo:issn "1832-9497" .
+
+
+
+###  urn:isbn:0730536521
+
+<urn:isbn:0730536521> rdf:type bibo:Book ,
+                               owl:NamedIndividual ;
+                      
+                      dcterms:date "December 1990" ;
+                      
+                      dcterms:title "Law compliance and helmet use among cyclists in New South Wales" ;
+                      
+                      bibo:number "CR 6/90" ;
+                      
+                      bibo:isbn10 "0730536521" ;
+                      
+                      dcterms:isPartOf <http://purl.org/RDA-Provenance/demo/P5/CRseries> ;
+                      
+                      dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/MichaelWalker> ;
+                      
+                      dcterms:publisher <http://purl.org/RDA-Provenance/demo/P5/RTA> ;
+                      
+                      bibo:authorList [ rdf:type rdf:Seq
+                                      ] .
+
+
+
+###  urn:isbn:0730536688
+
+<urn:isbn:0730536688> rdf:type bibo:Book ,
+                               owl:NamedIndividual ;
+                      
+                      dcterms:title "Law compliance and helmet use among cyclists in New South Wales, April 1991" ;
+                      
+                      dcterms:date "July 1991" ;
+                      
+                      bibo:isbn10 "0730536688" ;
+                      
+                      bibo:number "CR 1/91" ;
+                      
+                      dcterms:isPartOf <http://purl.org/RDA-Provenance/demo/P5/CRseries> ;
+                      
+                      dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/MichaelWalker> ;
+                      
+                      dcterms:publisher <http://purl.org/RDA-Provenance/demo/P5/RTA> ;
+                      
+                      bibo:authorList [ rdf:type rdf:Seq
+                                      ] .
+
+
+
+###  urn:isbn:073059100X
+
+<urn:isbn:073059100X> rdf:type bibo:Book ,
+                               owl:NamedIndividual ;
+                      
+                      bibo:isbn10 "073059100X" ;
+                      
+                      dcterms:title "Law compliance among cyclists in New South Wales, April 1992; A third survey" ;
+                      
+                      dcterms:date "July 1992" ;
+                      
+                      dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/MichaelWalker> ;
+                      
+                      dcterms:publisher <http://purl.org/RDA-Provenance/demo/P5/RTA> ;
+                      
+                      bibo:authorList [ rdf:type rdf:Seq
+                                      ] .
+
+
+
+###  urn:isbn:0730591107
+
+<urn:isbn:0730591107> rdf:type bibo:Book ,
+                               owl:NamedIndividual ;
+                      
+                      bibo:isbn10 "0730591107" ;
+                      
+                      dcterms:title "An Observational Survey of Law Compliance and Helmet Wearing by Bicyclists in New South Wales - 1993" ;
+                      
+                      dcterms:date "September 1993" ;
+                      
+                      dcterms:creator <http://purl.org/RDA-Provenance/demo/P5/FrankMilthorpe> ,
+                                      <http://purl.org/RDA-Provenance/demo/P5/NariidaSmith> ;
+                      
+                      dcterms:publisher <http://purl.org/RDA-Provenance/demo/P5/RTA> ;
+                      
+                      bibo:authorList [ rdf:type rdf:Seq
+                                      ] .
 
 
 

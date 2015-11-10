@@ -28,17 +28,15 @@
 
 # sro:Claims are rhetorical elements, and therefore text spans.
 :ChurchesClaim a sro:Claim, owl:NamedIndividual ;
-    sro:represents :ChurchesDisagreementPosition, :ChurchesChallengeArgument ;
+    sro:represents :ChurchesDisagreementPosition, :ChurchesAssertion ;
     dcterms:references :Table2, :Table3 ; 
     sam:primaryExpressionFor :ChurchesAssertion .
 	
-:ChurchesAssertion a sam:Assertion, owl:NamedIndividual ;
+:ChurchesAssertion a sam:Assertion, sro:Challenge, owl:NamedIndividual ;
    event:agent :TimChurches ; 
    event:time [ a tl:Interval ;
-                tl:at "2010"^^xsd:gYear; ] .
-
-:ChurchesChallengeArgument a sro:Challenge, owl:NamedIndividual;  
-  sro:arguments :ChurchesDisagreementPosition .
+                tl:at "2010"^^xsd:gYear; ] ;
+   sro:arguments :ChurchesDisagreementPosition .
   
 :ChurchesDisagreementPosition a sro:Disagreement, owl:NamedIndividual .
 
