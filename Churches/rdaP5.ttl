@@ -32,7 +32,7 @@
     dcterms:references :Table2, :Table3 ; 
     sam:primaryExpressionFor :ChurchesAssertion .
 	
-:ChurchesAssertion a sam:Assertion, sro:Challenge, owl:NamedIndividual ;
+:ChurchesAssertion a sro:Challenge, owl:NamedIndividual ;
    event:agent :TimChurches ; 
    event:time [ a tl:Interval ;
                 tl:at "2010"^^xsd:gYear; ] ;
