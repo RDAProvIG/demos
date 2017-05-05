@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://www.semanticweb.org/davedubin/ontologies/2017/3/untitled-ontology-97> a owl:Ontology ;
-	owl:imports <http://vivoweb.org/ontology/core> .
+	owl:imports <http://vivoweb.org/ontology/core> , <http://www.semanticweb.org/davedubin/ontologies/2017/4/untitled-ontology-107> .
 # 
 # 
 # #################################################################
